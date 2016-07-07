@@ -1,5 +1,13 @@
 {
   "name": "arandomgal",
   "version": "1.0.0",
-  "main": "app.js"
+  "scripts": {
+    "start": "node app.js"
+  },
+  "main": "app.js",
+  "repository": {
+    "type": "git",
+	"url": "https://github.com/arandomgal/hello_node"
+  },
+  "license": "MIT"
 }
