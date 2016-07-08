@@ -7,7 +7,17 @@
 var http = require('http');
 var server = http.createServer(function (request, response) {
     var now = new Date();
-    response.write("Hello there! Current time is " + now);
+    var hour = now.getHours();
+    var greetings = "";
+    if (hour >= 0 && hour < 12)
+        greetings = "Good Morning!";
+    else if (hour >= 12 && hour < 17)
+        greetings = "Good Afternoon!";
+    else
+        greetings = "Good Evening!";
+    response.write("<!DOCTYPE html><html><head><title>Node.js Greetings</title></head>");
+	response.write("<body><h1>" + greetings + "</h1>");
+	response.write("<p>Current time is " + now + "</p>");
     response.end();
 });
 server.listen(process.env.PORT || 5000);
